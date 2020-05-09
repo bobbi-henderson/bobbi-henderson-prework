@@ -2,14 +2,14 @@
     background-color: #818081;   
 }
 
+.container {
+    margin-top: 25px;
+}
+
 #left {
     background-color: #0300fd;
     width: 50%;
     float: left;
-}
-
-.container {
-    margin-top: 25px;
 }
 
 #right {
