@@ -1,0 +1,18 @@
+body, .navbar, .jumbotron {
+  background-color: #00eafe;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.navbar-brand, .display-2 {
+  font-weight: 700;
+}
+
+div p {
+  color: black;
+}
+
+
+
+
+
