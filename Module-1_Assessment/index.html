@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Bobbi Henderson</a>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container nav-container">
+            <a id="nav-heading" class="navbar-brand p-3" href="#">Bobbi Henderson</a>
             <ul class="navbar-nav d-inline-block">
                 <li class="nav-item d-inline-block mr-2">
                     <a class="nav-link d-inline-block" href="index.html">About</a>
@@ -26,17 +26,17 @@
         </div>   
     </nav>
 
-    <div class="container" id="content">
+    <div class="container mt-4" id="content">
         <div class="row">
             <div class="col">
-                <h1>About Me</h1>
+                <h1 class="heading py-3">About Me</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
-                <img src="assets/images/profile.jpg" alt="Profile Pic" class="img-fluid">
+            <div class="col-md-4">
+                <img src="assets/images/profile.jpg" alt="Profile Pic" class="img-fluid img-responsive" id="profile">
             </div>
-            <div class="col-9">
+            <div class="col-md-8">
                 <p>
                     Hello, my name is Bobbi, and I am single and ready to mingle!... Just kidding,
                     this isn't that kind of about me section. I am a young professional who is looking 
@@ -79,8 +79,8 @@
         </div>
     </div>
 
-    <footer class="footer fixed-bottom text-center">
-        <span>Copyright</span>
+    <footer class="footer fixed-bottom text-center pt-4">
+        <span>Copyright &copy;</span>
     </footer>
 </body>
 </html>

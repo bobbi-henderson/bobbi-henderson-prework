@@ -1,0 +1,58 @@
+body {
+    background-image: url(../images/cork-board.png);
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    color: #777777;
+    padding-bottom: 60px;
+}
+
+figcaption {
+    position: absolute;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.nav-container {
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+}
+
+
+.heading {
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    color: #4aaaa5;
+    border-bottom: 2px solid #cccccc;
+    font-weight: 600;
+}
+
+.btn.btn-square {
+    background-color: #4aaaa5;
+    color: #ffffff;
+    border-radius: 0;
+}
+
+.footer {
+    background-color: #666666;
+    color: #ffffff;
+    font-size: 12px;
+    border-top: 5px solid #4aaaa5;
+}
+
+#nav-heading {
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    background-color: #4aaaa5;
+    color: #ffffff;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#content {
+    background-color: #ffffff;
+    border: 2px solid #dddddd;
+}
+
