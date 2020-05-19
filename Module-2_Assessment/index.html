@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marvel Hangman</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <div class="jumbotron jumbotron-fluid text-center mt-0 py-0">
+        <div class="container">
+            <img src="assets/images/marvel_universe.jpg" alt="Marvel Universe" class="header-img">
+            <h1 class="display-2 header-logo">Hangman</h1>
+        </div>
+    </div>
     <div class="container">
         <div class="row text-center">
-            <div class="col-6">
+            <div class="col-xs-12 col-md-6">
                 <p id="answer">Guess the marvel character!</p>
                 <div id="character_image">
-                    <img src="assets/images/mystery-person.jpg" class="w-50" id="answer_img">
+                    <img src="assets/images/mystery-person.jpg" class="img-fluid" id="answer_img">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-xs-12 col-md-6">
                 <p class="">
                     PRESS ANY KEY TO GET STARTED! <br>
                     WINS <span id="wins"></span> <br>

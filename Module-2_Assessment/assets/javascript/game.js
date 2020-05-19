@@ -78,10 +78,15 @@ const game = {
                 gamePieces.winsHTML.innerText = gamePieces.wins;
                 this.newGame();
             };
-        } else {
+        } else if (gamePieces.remaining_guesses > 1) {
         gamePieces.remaining_guesses -= 1;
         gamePieces.remain_guessHTML.innerText = gamePieces.remaining_guesses;
-        };
+        } else {
+            gamePieces.answerHTML.innerText = `SORRY, YOU ARE OUT OF GUESSES, THE CORRECT ANSWER WAS ${gamePieces.newCharacter.name.toUpperCase()}!`;
+            gamePieces.imageHTML.src = gamePieces.newCharacter.image;
+            game.newGame()
+        }
+        ;
     },
 }
 
@@ -94,10 +99,6 @@ document.addEventListener('keypress', function() {
     const key = event.key.toUpperCase();
     if (gamePieces.validLetters.includes(key) && !gamePieces.guessedLetters.includes(key) && gamePieces.remaining_guesses > 0) {
         game.guess(key);
-    } else if (gamePieces.remaining_guesses === 0) {
-        gamePieces.answerHTML.innerText = `SORRY, YOU ARE OUT OF GUESSES, THE CORRECT ANSWER WAS ${gamePieces.newCharacter.name.toUpperCase()}!`;
-        gamePieces.imageHTML.src = gamePieces.newCharacter.image;
-        game.newGame()
     };
 });
 
