@@ -34,6 +34,8 @@ const gamePieces = {
     wins: 0,
     newCharacter: {},
     hiddenLetters: [],
+    winningSound: new Audio('./assets/audio/correct-theme.mp3'),
+    buzzer: new Audio('./assets/audio/incorrect-buzzer.mp3'),
     randomCharacter: function() {
         return this.characters[Math.floor(Math.random() * this.characters.length)]
     },
@@ -72,6 +74,9 @@ const game = {
             const hiddenCharacter = gamePieces.hiddenLetters.join(' ');
             gamePieces.characterHTML.innerText = hiddenCharacter;
             if (!gamePieces.hiddenLetters.includes('_')) {
+                gamePieces.buzzer.pause();
+                gamePieces.buzzer.currentTime = 0;
+                gamePieces.winningSound.play();
                 gamePieces.answerHTML.innerText = `CONGRATULATIONS! ${currentName} IS CORRECT!`;
                 gamePieces.imageHTML.src = gamePieces.newCharacter.image;
                 gamePieces.wins++;
@@ -82,6 +87,9 @@ const game = {
         gamePieces.remaining_guesses -= 1;
         gamePieces.remain_guessHTML.innerText = gamePieces.remaining_guesses;
         } else {
+            gamePieces.winningSound.pause();
+            gamePieces.winningSound.currentTime = 0;
+            gamePieces.buzzer.play();
             gamePieces.answerHTML.innerText = `SORRY, YOU ARE OUT OF GUESSES, THE CORRECT ANSWER WAS ${gamePieces.newCharacter.name.toUpperCase()}!`;
             gamePieces.imageHTML.src = gamePieces.newCharacter.image;
             game.newGame()
@@ -101,4 +109,3 @@ document.addEventListener('keypress', function() {
         game.guess(key);
     };
 });
-
