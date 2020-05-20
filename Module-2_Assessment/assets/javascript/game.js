@@ -30,7 +30,7 @@ const gamePieces = {
     answerHTML: document.querySelector('#answer'),
     validLetters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     guessedLetters: [],
-    remaining_guesses: 6,
+    remaining_guesses: 13,
     wins: 0,
     newCharacter: {},
     hiddenLetters: [],
@@ -45,7 +45,7 @@ const game = {
     newGame: function () {
         gamePieces.guessedLetters = [];
         gamePieces.guessedHTML.innerText = gamePieces.guessedLetters;
-        gamePieces.remaining_guesses = 6;
+        gamePieces.remaining_guesses = 13;
         gamePieces.remain_guessHTML.innerText = gamePieces.remaining_guesses;
         gamePieces.newCharacter = gamePieces.randomCharacter();
         gamePieces.hiddenLetters = [];
@@ -66,6 +66,8 @@ const game = {
         gamePieces.guessedHTML.innerText = guessedString;
         const currentName = gamePieces.newCharacter.name.toUpperCase();
         if (currentName.includes(key)) {
+            gamePieces.remaining_guesses -= 1;
+            gamePieces.remain_guessHTML.innerText = gamePieces.remaining_guesses;
             for(let i=0; i<currentName.length; i++) {
                 if (currentName[i] === key) {
                     gamePieces.hiddenLetters[i] = currentName[i];
@@ -84,8 +86,8 @@ const game = {
                 this.newGame();
             };
         } else if (gamePieces.remaining_guesses > 1) {
-        gamePieces.remaining_guesses -= 1;
-        gamePieces.remain_guessHTML.innerText = gamePieces.remaining_guesses;
+            gamePieces.remaining_guesses -= 1;
+            gamePieces.remain_guessHTML.innerText = gamePieces.remaining_guesses;
         } else {
             gamePieces.winningSound.pause();
             gamePieces.winningSound.currentTime = 0;
@@ -105,7 +107,7 @@ game.newGame()
 
 document.addEventListener('keypress', function() {
     const key = event.key.toUpperCase();
-    if (gamePieces.validLetters.includes(key) && !gamePieces.guessedLetters.includes(key) && gamePieces.remaining_guesses > 0) {
+    if (gamePieces.validLetters.includes(key) && !gamePieces.guessedLetters.includes(key)) {
         game.guess(key);
     };
 });
