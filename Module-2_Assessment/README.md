@@ -37,5 +37,5 @@ JavaScript with pick a character at random.
 
 ## Acknowledgments
 
+* Marvel Comics/Marvel Entertainment
 * The Walt Disney Company
-* Marvel Comics
